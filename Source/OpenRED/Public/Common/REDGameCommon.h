@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Battle/Internal/Enums.h"
+#include "Battle/Internal/BattleEnums.h"
 #include "Engine/GameInstance.h"
 #include "REDGameCommon.generated.h"
 

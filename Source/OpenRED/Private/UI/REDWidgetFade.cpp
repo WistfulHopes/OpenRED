@@ -7,7 +7,7 @@
 
 void UREDWidgetFade::FadeOutFast(EFadeType type)
 {
-	FadeType = type;
+	FadeType = static_cast<uint8>(type);
 	bFadeDraw = true;
 	bFadeEnd = true;
 	FadeTimeAdd = 1;
@@ -17,16 +17,16 @@ void UREDWidgetFade::FadeOutFast(EFadeType type)
 
 void UREDWidgetFade::SwitchDispState(EFadeType type)
 {
-	ESlateVisibility Visibility;
+	ESlateVisibility SlateVisibility;
 	if (type == EFadeType::On)
 	{
 		Image_DefaultFade->SetVisibility(ESlateVisibility::Collapsed);
-		Visibility = ESlateVisibility::SelfHitTestInvisible;
+		SlateVisibility = ESlateVisibility::SelfHitTestInvisible;
 	}
 	else
 	{
 		Image_DefaultFade->SetVisibility(ESlateVisibility::SelfHitTestInvisible);
-		Visibility = ESlateVisibility::Collapsed;
+		SlateVisibility = ESlateVisibility::Collapsed;
 	}
-	Widget_AnimationFade->SetVisibility(Visibility);
+	Widget_AnimationFade->SetVisibility(SlateVisibility);
 }
