@@ -11,6 +11,9 @@
  */
 UCLASS()
 class OPENRED_API AREDGameMode : public AGameMode
-{
+{	
 	GENERATED_BODY()
+
+public:
+	AREDGameMode(const FObjectInitializer& ObjectInitializer);
 };
