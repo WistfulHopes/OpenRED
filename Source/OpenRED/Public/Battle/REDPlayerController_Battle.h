@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameMode.h"
-#include "REDGameMode.generated.h"
+#include "Common/REDPlayerController.h"
+#include "REDPlayerController_Battle.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class OPENRED_API AREDGameMode : public AGameMode
+class OPENRED_API AREDPlayerController_Battle : public AREDPlayerController
 {
 	GENERATED_BODY()
 };

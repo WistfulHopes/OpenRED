@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameStateBase.h"
+#include "GameFramework/GameState.h"
 
 #include "REDGameState.generated.h"
 
@@ -11,7 +11,7 @@
  * 
  */
 UCLASS()
-class OPENRED_API AREDGameState : public AGameStateBase
+class OPENRED_API AREDGameState : public AGameState
 {
 	GENERATED_BODY()
 };

@@ -1,11 +1,13 @@
 ﻿#pragma once
-#include "Enums.h"
+#include "BattleEnums.h"
 #include "PlayerResult.h"
 #include "OpenRED/Public/Common/RoundTimer.h"
 
 class BattleState
 {
 public:
+	BattleState();
+	
 	RoundTimer m_Timer;
 	PlayerResult m_PlayerResult[2];
 	unsigned int m_RoundCount;
@@ -21,4 +23,7 @@ public:
 	SIDE_ID m_timerForcePauseSide;
 	bool m_BattleQuickEnd;
 	bool m_TimeLimitForceFinish;
+
+private:
+	void InitParam();
 };

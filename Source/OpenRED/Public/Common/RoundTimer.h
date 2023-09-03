@@ -3,6 +3,8 @@
 class RoundTimer
 {
 public:
+	RoundTimer();
+	
 	int m_FrameTimeMax;
 	int m_CurrentFrameTime;
 	unsigned int m_TimeStep;

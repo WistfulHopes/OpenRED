@@ -38,6 +38,20 @@ public:
 	int m_PreRakusyo[2];
 	int m_PreYogoreLevel[2];
 	
+	bool m_IsForceReload;
+	float m_FadeOut01;
+	float m_BGFadeInSpeed;
+	float m_BGFadeOutSpeed;
+	float m_BGFadeAlpha;
+	bool m_RequestFadeOut;
+	bool m_bForceBGHide;
+	unsigned int m_DisplayFadeColor;
+	float m_DisplayFadeAdd;
+	float m_DisplayFade01;
+	int m_DisplayFadeRenderStage;
+	bool m_bRequestDisplayFade;
+	bool m_bDrawDisplayFade;
+	
 	// Post process related
 	int m_DiffusionFilter2LevelMax;
 	int m_DiffusionFilter2SaturationMin;
@@ -80,6 +94,8 @@ private:
 	
 	unsigned int m_BOMRandomSeed;
 	
+	int m_YogoreLv[2][3];
+	
 	int m_EventVsVoiceRandomIndex;
 	int m_EventVsVoiceNum;
 
@@ -89,10 +105,11 @@ private:
 	
 public:
 	BATTLE_CObjectManager();
-	
-	void ExecuteObjectManagerEvent(class BattleEventManager* pBEM);
+
+	void BOM_MatchOneceInitialize(bool bIs2ndCall);
 	void BOM_RoundAndEasyResetInitialize(bool use2ndInitialize);
-	
+	void ExecuteObjectManagerEvent(class BattleEventManager* pBEM);
+
 private:
 	void ExecuteObjectManagerEvent(const struct BOMEventInfo *pEvent);
 };

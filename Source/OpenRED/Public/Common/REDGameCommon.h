@@ -3,9 +3,11 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Battle/Internal/Enums.h"
 #include "Engine/GameInstance.h"
 #include "REDGameCommon.generated.h"
 
+class UREDWidgetFade;
 /**
  * 
  */
@@ -17,5 +19,11 @@ class OPENRED_API UREDGameCommon : public UGameInstance
 public:
 	UREDGameCommon();
 
+	int playerID;
+	SIDE_ID m_PlayerSide;
+
+	UPROPERTY()
+	UREDWidgetFade* FadeWidget;
+	
 	static UREDGameCommon* sInstance;
 };

@@ -3,14 +3,14 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "GameFramework/GameMode.h"
-#include "REDGameMode.generated.h"
+#include "Common/REDHUD.h"
+#include "REDHUD_Battle.generated.h"
 
 /**
  * 
  */
 UCLASS()
-class OPENRED_API AREDGameMode : public AGameMode
+class OPENRED_API AREDHUD_Battle : public AREDHUD
 {
 	GENERATED_BODY()
 };

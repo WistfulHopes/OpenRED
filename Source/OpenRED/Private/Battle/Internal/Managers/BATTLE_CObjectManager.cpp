@@ -25,6 +25,40 @@ BATTLE_CObjectManager::BATTLE_CObjectManager()
 	}
 }
 
+void BATTLE_CObjectManager::BOM_MatchOneceInitialize(bool bIs2ndCall)
+{
+	if (!bIs2ndCall)
+	{
+		// TODO generate random seed again
+	}
+	m_BattleCheckSumTimeCount = 0;
+	m_BattleCheckSumErrorFound = 0;
+	m_BattleCheckSumErrorFoundList[0] = 0;
+	m_BattleCheckSumErrorFoundList[1] = 0;
+
+	m_RequestFadeOut = false;
+
+	// Initialize start of battle values
+	m_BurstVal[0] = 15000;
+	m_BurstVal[1] = 15000;
+	m_MatchStaticValue0[1] = 0;
+	m_MatchStaticValue1[1] = 0;
+	m_Rakusyo[1] = 0;
+	m_YogoreLevel[1] = 0;
+	
+	m_PreBurstVal[0] = 15000;
+	m_PreBurstVal[1] = 15000;
+	m_PreMatchStaticValue0[1] = 0;
+	m_PreMatchStaticValue1[1] = 0;
+	m_PreRakusyo[1] = 0;
+	m_PreYogoreLevel[1] = 0;
+	for (int i = 0; i < 2; i++)
+	{
+		m_YogoreLv[i][0] = 0;
+		m_YogoreLv[i][1] = 0;
+	}
+}
+
 void BATTLE_CObjectManager::ExecuteObjectManagerEvent(BattleEventManager* pBEM)
 {
 	if (!pBEM) return;
@@ -51,8 +85,7 @@ void BATTLE_CObjectManager::BOM_RoundAndEasyResetInitialize(bool use2ndInitializ
 	m_FinishSlowTime = 0;
 
 	// Set values to previous
-	const auto GameState = Cast<AREDGameState_Battle>(GWorld->GetGameState());
-	if (GameState)
+	if (const auto GameState = Cast<AREDGameState_Battle>(GWorld->GetGameState()))
 	{
 		if (GameState->State.Get()->m_Winner == SIDE_ID_INVALID)
 		{

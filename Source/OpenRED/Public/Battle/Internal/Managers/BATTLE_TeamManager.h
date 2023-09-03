@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "OpenRED/Public/Battle/Internal/Enums.h"
+#include "..\BattleEnums.h"
 
 class BATTLE_TeamManager
 {
